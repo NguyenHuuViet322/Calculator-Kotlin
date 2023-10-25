@@ -203,10 +203,16 @@ class MainActivity : AppCompatActivity() {
                 dau = buttonValue;
                 setEquation(firstNumber, dau, secondNumber);
             } else {
-                dau = calc(firstNumber, dau, secondNumber, buttonValue)
-                firstNumber = binding.result.text.toString().toFloat().toInt()
-                secondNumber = null
-                setEquation(firstNumber, dau, secondNumber);
+                if(secondNumber == null) {
+                    dau = buttonValue
+                    setEquation(firstNumber, dau, secondNumber);
+                }
+                else {
+                    dau = calc(firstNumber, dau, secondNumber, buttonValue)
+                    firstNumber = binding.result.text.toString().toFloat().toInt()
+                    secondNumber = null
+                    setEquation(firstNumber, dau, secondNumber);
+                }
             }
         }
 
@@ -216,10 +222,16 @@ class MainActivity : AppCompatActivity() {
                 dau = buttonValue;
                 setEquation(firstNumber, dau, secondNumber);
             } else {
-                dau = calc(firstNumber, dau, secondNumber, buttonValue)
-                firstNumber = binding.result.text.toString().toFloat().toInt()
-                secondNumber = null
-                setEquation(firstNumber, dau, secondNumber);
+                if(secondNumber == null) {
+                    dau = buttonValue
+                    setEquation(firstNumber, dau, secondNumber);
+                }
+                else {
+                    dau = calc(firstNumber, dau, secondNumber, buttonValue)
+                    firstNumber = binding.result.text.toString().toFloat().toInt()
+                    secondNumber = null
+                    setEquation(firstNumber, dau, secondNumber);
+                }
             }
         }
 
@@ -229,10 +241,16 @@ class MainActivity : AppCompatActivity() {
                 dau = buttonValue;
                 setEquation(firstNumber, dau, secondNumber);
             } else {
-                dau = calc(firstNumber, dau, secondNumber, buttonValue)
-                firstNumber = binding.result.text.toString().toFloat().toInt()
-                secondNumber = null
-                setEquation(firstNumber, dau, secondNumber);
+                if(secondNumber == null) {
+                    dau = buttonValue
+                    setEquation(firstNumber, dau, secondNumber);
+                }
+                else {
+                    dau = calc(firstNumber, dau, secondNumber, buttonValue)
+                    firstNumber = binding.result.text.toString().toFloat().toInt()
+                    secondNumber = null
+                    setEquation(firstNumber, dau, secondNumber);
+                }
             }
         }
 
@@ -242,10 +260,16 @@ class MainActivity : AppCompatActivity() {
                 dau = buttonValue;
                 setEquation(firstNumber, dau, secondNumber);
             } else {
-                dau = calc(firstNumber, dau, secondNumber, buttonValue)
-                firstNumber = binding.result.text.toString().toFloat().toInt()
-                secondNumber = null
-                setEquation(firstNumber, dau, secondNumber);
+                if(secondNumber == null) {
+                    dau = buttonValue
+                    setEquation(firstNumber, dau, secondNumber);
+                }
+                else {
+                    dau = calc(firstNumber, dau, secondNumber, buttonValue)
+                    firstNumber = binding.result.text.toString().toFloat().toInt()
+                    secondNumber = null
+                    setEquation(firstNumber, dau, secondNumber);
+                }
             }
         }
 
@@ -272,6 +296,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             setEquation(firstNumber, dau, secondNumber)
+        }
+
+        binding.reverseButton.setOnClickListener {
+            if (secondNumber == null) {
+                if (firstNumber != null) {
+                    firstNumber = firstNumber!! * -1;
+                }
+            } else {
+                secondNumber = secondNumber!! * -1;
+            }
+            setEquation(firstNumber, dau, secondNumber);
         }
     }
 
